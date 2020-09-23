@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+        <v-card >
+          <v-carousel cycle :interval="intervalo" height="100vh" hide-delimiters>
+          <v-carousel-item v-for="(imagen,i) in imagenes" :key="i" :src="imagen.src">
+          
+            <v-row class="fill-height" align="center" justify="center">
+              <div  class="display-3">
+                Más que un grupo de personas,
+                somos un Power Team
+              </div>
+            </v-row>
+          
+          </v-carousel-item>
+          </v-carousel>
+        </v-card>
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data(){
+        return{
+          intervalo:3000,
+          imagenes:[
+           {src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'}, 
+           {src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'}, 
+           {src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'}, 
+          ]
+        }
+      }
+    })
+  </script>
+</body>
+</html>
